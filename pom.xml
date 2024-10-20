@@ -60,6 +60,12 @@
             <artifactId>drools-decisiontables</artifactId>
             <version>8.44.2.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-mvel</artifactId>
+            <version>8.44.2.Final</version>
+        </dependency>
+<!--Drools relies on MVEL (an expression language) for rule evaluation and execution. If you were missing the drools-mvel dependency, Drools wouldn't have been able to process or evaluate rules that use MVEL.-->
     </dependencies>
 
     <build>

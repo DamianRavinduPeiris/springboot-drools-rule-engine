@@ -14,4 +14,5 @@ public class Order implements Serializable {
     private CardType cardType;
     private double discount;
     private double price;
+    private String status;
 }

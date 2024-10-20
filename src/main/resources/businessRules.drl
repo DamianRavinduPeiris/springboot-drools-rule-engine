@@ -8,6 +8,7 @@ when
 orderObject : Order(cardType == CardType.HNB)
 then
 orderObject.setDiscount(10);
+orderObject.setStatus("This rule was fired by Drools!");
 end
 
 rule "HSBC"
@@ -15,6 +16,7 @@ when
 orderObject : Order(cardType == CardType.HSBC)
 then
 orderObject.setDiscount(20);
+orderObject.setStatus("This rule was fired by Drools!");
 end
 
 rule "COMBANK"
@@ -22,12 +24,14 @@ when
 orderObject : Order(cardType == CardType.COMBANK)
 then
 orderObject.setDiscount(30);
+orderObject.setStatus("This rule was fired by Drools!");
 end
 
 
 rule "NSB"
 when
-orderObject : Order(cardType == CardType.NSB)
+orderObject : Order(cardType == CardType.NSB && orderObject.price > 1000)
 then
 orderObject.setDiscount(40);
+orderObject.setStatus("This rule was fired by Drools!");
 end
