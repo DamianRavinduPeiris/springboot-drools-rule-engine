@@ -1,0 +1,33 @@
+package KieRule;
+import com.damian.drools.model.Order;
+import com.damian.drools.enums.CardType;
+
+
+rule "HNB"
+when
+orderObject : Order(cardType == CardType.HNB)
+then
+orderObject.setDiscount(10);
+end
+
+rule "HSBC"
+when
+orderObject : Order(cardType == CardType.HSBC)
+then
+orderObject.setDiscount(20);
+end
+
+rule "COMBANK"
+when
+orderObject : Order(cardType == CardType.COMBANK)
+then
+orderObject.setDiscount(30);
+end
+
+
+rule "NSB"
+when
+orderObject : Order(cardType == CardType.NSB)
+then
+orderObject.setDiscount(40);
+end
